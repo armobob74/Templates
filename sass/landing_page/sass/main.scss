@@ -1,0 +1,59 @@
+$gradient-height:3vh;
+$bloc-height:35vh;
+$d:18%;
+$d-hue:60;
+
+$hue-1:120;
+$bg-color-1:hsl($hue-1,100%,$d);
+$txt-color-1:hsl($hue-1,100%,100%-$d);
+
+$hue-2:$hue-1+$d-hue;
+$bg-color-2:hsl($hue-2,100%,$d);
+$txt-color-2:hsl($hue-2,100%,100%-$d);
+
+$hue-3:$hue-2+$d-hue;
+$bg-color-3:hsl($hue-3,100%,$d);
+$txt-color-3:hsl($hue-3,100%,100%-$d);
+
+$hue-4:$hue-3+$d-hue;
+$bg-color-4:hsl($hue-4,100%,$d);
+$txt-color-4:hsl($hue-4,100%,100%-$d);
+
+body{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    background-color:black;
+    padding:0;
+    margin:0;
+}
+
+@mixin bloc {
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        width:100vw;
+        height:$bloc-height;
+}
+
+#bloc-1 {
+    @include bloc;
+    background-color:$bg-color-1;
+    color:$txt-color-1;
+}
+#bloc-2 {
+    @include bloc;
+    background-color:$bg-color-2;
+    color:$txt-color-2;
+}
+#bloc-3 {
+    @include bloc;
+    background-color:$bg-color-3;
+    color:$txt-color-3;
+}
+#bloc-4 {
+    @include bloc;
+    background-color:$bg-color-4;
+    color:$txt-color-4;
+}
