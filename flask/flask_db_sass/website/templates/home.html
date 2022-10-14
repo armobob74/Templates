@@ -1,0 +1,14 @@
+{% extends 'basic_skeleton.html' %}
+{% block head %}{% endblock %}
+{% block body %}
+    <h2>SQLite3</h2>
+    <ul>
+    {% for word in words%}
+    <li>{{word}}</li>
+    {% endfor %}
+    </ul>
+    <form action="/" method="POST">
+	    <input type="text" name="word" id="word"/>
+	    <button>Submit</button>
+    </form>
+{%endblock%}
