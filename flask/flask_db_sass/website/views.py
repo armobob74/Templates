@@ -17,7 +17,8 @@ def sqliteExample():
                 )
         db.session.add(testmodel)
         db.session.commit()
-
+        #this redirect sends a GET so that we don't end up resubmitting this POST on each refresh.
+        return redirect('/sqlite-example')
     #the query below will return a list of Row objects
     #hit gx below for more info on selection:
     # https://flask-sqlalchemy.palletsprojects.com/en/3.0.x/queries/
