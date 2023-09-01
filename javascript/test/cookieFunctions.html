@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script src="cookieFunctions.js"> </script>
+	<script>
+		let cookie_name = "best name ever";
+		let cookie_value = "so much value";
+		if(!cookieExists(cookie_name)){
+			setCookie(cookie_name, cookie_value)
+			console.log("loaded cookie:",getCookie(cookie_name))
+		} else {
+			setCookie(cookie_name,"");
+			console.log("deleted cookie")
+
+		}
+	</script>
+</body>
+</html>
