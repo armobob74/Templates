@@ -27,3 +27,4 @@ function getCookie(cookie_name) {
 function cookieExists(cookie_name) {
   return getCookie(cookie_name) !== "";
 }
+
