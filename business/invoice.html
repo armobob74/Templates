@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Invoice</title>
+		<style>
+* {
+	box-sizing: border-box;
+}
+p {
+	margin:0;
+	margin-bottom:0.5em;
+	padding:0;
+}
+body {
+	font-family: Arial, sans-serif;
+	display:flex;
+	flex-direction: column;
+	width:50%;
+	padding-left:1.5em;
+}
+body section{
+}
+#info{
+	display:flex;
+	gap:3em;
+}
+#info div {
+	border-radius:0.5em;
+}
+				table{
+	margin-bottom:0.5em;
+				}
+
+		</style>
+	</head>
+	<body>
+
+		<h1>Invoice</h1>
+		<section>
+			<p>Invoice Number:</p>
+			<p>Date: Date Here</p>
+		</section>
+
+		<section id="info">
+			<div id="seller-info">
+				<h2>Seller Information</h2>
+				<p>Armon Naddaf</p>
+				<p>14527 Oak Street<br>Saratoga,CA</p>
+				<p>(408) 384-2711</p>
+			</div>
+			<div id="buyer-info">
+				<h2>Buyer Information</h2>
+				<p>Persist AI Formulations Corp.</p>
+				<p>890 Embarcadero Drive<br>West Sacramento, CA</p>
+			</div>
+		</section>
+
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Description</th>
+					<th>Quantity</th>
+					<th>Unit Price</th>
+					<th>Total</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Item 1</td>
+					<td>2</td>
+					<td>$50</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Item 2</td>
+					<td>1</td>
+					<td>$120</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<section id="summary">
+			<p>Total Amount Due: $<span id="table-total"></span></p>
+			<p>Payment Due by: Due Date Here</p>
+			<p>Payment Methods: Payment methods details here</p>
+		</section>
+		<script>
+			const rows = document.querySelectorAll('table tbody tr');
+			function computeTotal() {
+				let table_total = 0;
+				// Loop through all rows to sum the totals
+				for (let row of rows) {
+					cells = row.querySelectorAll('td')
+					quantity = parseFloat(cells[1].innerText)
+					unit_price = parseFloat(cells[2].innerText.replace('$',''))
+					row_total = quantity * unit_price
+					cells[3].innerText = row_total.toFixed(2)
+					table_total += row_total
+				}
+				// Update the total cell with the new total, formatted as currency
+				document.getElementById('table-total').innerText = table_total.toFixed(2);
+			}
+			computeTotal()
+		</script>
+	</body>
+</html>
+
