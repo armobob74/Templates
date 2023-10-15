@@ -1,6 +1,6 @@
 # My Sample Markdown Document
 
-## Introduction
+## Introduction {#introduction}
 This is a sample Markdown document showcasing different elements.
 
 
@@ -11,7 +11,7 @@ This is a sample Markdown document showcasing different elements.
 4. [Images](#images)
 5. [Code](#code)
 
-## Lists
+## Lists {#lists}
 
 ### Unordered List
 
@@ -27,7 +27,7 @@ This is a sample Markdown document showcasing different elements.
     2. Second item
     3. Third item
 
-## Tables
+## Tables {#tables}
 
     | Header 1 | Header 2 | Header 3 |
     |----------|:--------:|---------:|
@@ -37,7 +37,7 @@ This is a sample Markdown document showcasing different elements.
 
     *Note: The colons in the header separators denote text alignment. Left for left-aligned, right for right-aligned, and both for centered.*
 
-## Images
+## Images {#images}
 
     Here's an image:
 
@@ -46,7 +46,7 @@ This is a sample Markdown document showcasing different elements.
     *Caption: A placeholder image.*
 
     ---
-## Code
+## Code {#code}
     
     Sometimes you want to reference `someCode()` inline
     ```python
@@ -54,7 +54,6 @@ This is a sample Markdown document showcasing different elements.
     def someCode():
         print("some words")
     ```
-
 
     Thank you for viewing this sample document!
 

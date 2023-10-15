@@ -1,0 +1,15 @@
+<script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.3/socket.io.js"></script>
+<script>
+    var socket = io.connect('http://localhost:5000');
+    
+    socket.on('connect', function() {
+        console.log('Connected to server');
+    });
+    
+    socket.on('message', function(msg) {
+        console.log('Received message:', msg);
+    });
+    
+    socket.emit('message', 'Hello server');
+</script>
+

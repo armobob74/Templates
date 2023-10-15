@@ -1,0 +1,42 @@
+/* from ChatGPT */
+/* Set font and color for the entire table */
+table {
+  font-family: Arial, sans-serif;
+  color: #333;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* Add a background color to the table header and footer */
+thead {
+  background-color: #f2f2f2;
+}
+
+tfoot {
+  background-color: #f2f2f2;
+}
+
+/* Set the table header and footer font weight and color */
+th {
+  font-weight: bold;
+  color: #444;
+  padding: 12px;
+  text-align: left;
+}
+
+/* Set the table cell padding and border */
+td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+/* Alternate row color */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Hover effect for table rows */
+tr:hover {
+  background-color: #ddd;
+}
+
