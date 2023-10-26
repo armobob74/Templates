@@ -1,0 +1,90 @@
+<!-- Be sure to get the column number from whatever generator thing you are using-->
+<button class="sort-button ascending" type="button" col=0>
+	<svg xmlns="http://www.w3.org/2000/svg" width=16 height=16 viewBox="0 0 16 16" fill="currentColor" class="bi bi-arrow-down-up">
+      <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+</svg>
+</button>
+<script>
+document.querySelectorAll('button.sort-button').forEach((sort_btn) => sort_btn.addEventListener('click', () => {
+    const col = Number(sort_btn.getAttribute('col'));
+    const table = document.querySelector("table");
+    const tbody = table.getElementsByTagName("tbody")[0];
+    const rows = Array.from(tbody.getElementsByTagName("tr"));
+
+    let sortOrder;
+    if(sort_btn.classList.contains('ascending')){
+        sortOrder = 1;
+    } else {
+        sortOrder = -1;
+    }
+    sort_btn.classList.toggle('ascending');
+
+    const sortedRows = rows.sort((a, b) => {
+        const aText = a.getElementsByTagName("td")[col].innerText || a.getElementsByTagName("td")[col].textContent;
+        const bText = b.getElementsByTagName("td")[col].innerText || b.getElementsByTagName("td")[col].textContent;
+        return aText.localeCompare(bText, undefined, { numeric: true }) * sortOrder;
+    });
+
+    for (const row of sortedRows) {
+        tbody.appendChild(row);
+    }
+}));
+</script>
+
+<table>
+	<thead>
+		<tr>
+			<th>One</th>
+			<th>Two</th>
+			<th>Three</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>0</td>
+			<td>a</td>
+			<td>A</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>b</td>
+			<td>B</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>c</td>
+			<td>C</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>d</td>
+			<td>D</td>
+		</tr>
+	</tbody>
+</table>
+<style>
+button.sort-button{
+	font-size:10px;
+	background:none;
+	border:none;
+	border-radius:3px;
+	padding:0px;
+	margin-right:1ex;
+	transition: 0.2s;
+}
+button.sort-button:hover{
+	cursor:pointer;
+	color:green;
+}
+button.sort-button:not(.ascending) {
+    transform: scaleY(-1);
+}
+
+@media only screen and (max-device-width: 800px) {
+	button.sort-button svg{
+		width:4em;
+		height:4em;
+
+	}
+}
+</style>
