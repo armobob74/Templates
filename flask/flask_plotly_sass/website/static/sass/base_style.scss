@@ -1,0 +1,42 @@
+$gradient-height: 3vh;
+$blocc-height: 35vh;
+$primary-hue: 120;
+$bg-color-1: #f4f4f4;
+$txt-color-1: #333333; // Charcoal color
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: $bg-color-1;
+  color: $txt-color-1;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin:0px;
+  padding:0px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 1em;
+  gap: 1em;
+  label {
+    display: flex;
+    gap: 1em;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+#myPlot{
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}

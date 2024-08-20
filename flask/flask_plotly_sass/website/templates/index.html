@@ -1,0 +1,16 @@
+{% extends 'basic_skeleton.html' %} {% block head %}
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="{{url_for('static',filename='javascript/plot_logic.js')}}"></script>
+{% endblock %} {% block body %}
+<form id="plot-form">
+  <label for="m">
+    Slope (m):
+    <input type="number" id="m" name="m" value="1" step="0.1" required />
+  </label>
+  <label for="b">
+    Y-Intercept (b):
+    <input type="number" id="b" name="b" value=0 step=0.1 required />
+  </label>
+</form>
+<div id="myPlot" style="width: 100%; max-width: 600px"></div>
+{%endblock%}
